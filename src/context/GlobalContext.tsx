@@ -9,12 +9,15 @@ interface IContextData {
   test: string;
 }
 
-export const Context = createContext<IContext | null>(null);
+export const Context = createContext<IContext>({
+  globalData: {} as IContextData,
+  updateGlobalContext: (state: any) => {},
+});
 
 export const useGlobalContext = () => useContext(Context);
 
 const GlobalContext: FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [globalData, setGlobalData] = useState<IContextData | null>({ test: "test" });
+  const [globalData, setGlobalData] = useState<IContextData>({ test: "test data" });
 
   const updateGlobalContext = (data: any) => {
     setGlobalData((prev: any) => {
@@ -25,7 +28,7 @@ const GlobalContext: FC<{ children: React.ReactNode }> = ({ children }) => {
     });
   };
 
-  return <Context.Provider value={[globalData, updateGlobalContext]}>{children}</Context.Provider>;
+  return <Context.Provider value={{ globalData, updateGlobalContext }}>{children}</Context.Provider>;
 };
 
 export default GlobalContext;
