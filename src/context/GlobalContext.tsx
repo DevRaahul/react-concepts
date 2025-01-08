@@ -11,7 +11,7 @@ interface IContextData {
 
 export const Context = createContext<IContext>({
   globalData: {} as IContextData,
-  updateGlobalContext: (state: any) => {},
+  updateGlobalContext: (): void => {},
 });
 
 export const useGlobalContext = () => useContext(Context);
