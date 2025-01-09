@@ -1,9 +1,12 @@
+import { dispatch } from "@/redux/Hooks";
 import { Button } from "./ui/button";
+import { increment } from "@/redux/slices/counterSlice";
 
 const CountComponent = () => {
   return (
     <div>
-      <Button>Count Btn</Button>
+      dispatch
+      <Button onClick={() => dispatch(increment())}>Count Btn</Button>
     </div>
   );
 };
