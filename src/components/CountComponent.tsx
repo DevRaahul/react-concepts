@@ -1,5 +1,11 @@
+import { Button } from "./ui/button";
+
 const CountComponent = () => {
-  return <div></div>;
+  return (
+    <div>
+      <Button>Count Btn</Button>
+    </div>
+  );
 };
 
 export default CountComponent;
