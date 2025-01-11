@@ -1,11 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
 import { Button } from "./ui/button";
 import { increment } from "@/redux/slices/counterSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/Hooks";
 
 const CountComponent = () => {
-  const dispatch = useDispatch();
-  const data = useSelector((state: any) => state.counter);
-  console.log(data);
+  const dispatch = useAppDispatch();
+  const data = useAppSelector((state: any) => state.counter);
 
   const incrementCount = () => {
     dispatch(increment());
