@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Component } from "lucide-react";
+import { CircleUserRound, Component, ShoppingCart } from "lucide-react";
 
 const Header: FC = () => {
   return (
@@ -8,9 +8,12 @@ const Header: FC = () => {
         <Component />
         <h3>React Concepts</h3>
       </div>
-      <nav className="flex items-center justify-around gap-4">
-        <h3>Sign In</h3>
-        <h3>Profile</h3>
+      <nav className="flex items-center justify-around gap-8 px-2">
+        <div className="relative">
+          <p className="top-0 left-5 absolute p-1 rounded-full border-black bg-red-600 text-xs">0</p>
+          <ShoppingCart />
+        </div>
+        <CircleUserRound />
       </nav>
     </header>
   );
