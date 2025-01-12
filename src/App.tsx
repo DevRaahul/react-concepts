@@ -1,4 +1,5 @@
 import "./App.css";
+import Footer from "./components/Footer";
 // import CountComponent from "./components/CountComponent";
 import Header from "./components/Header";
 // import { Button } from "./components/ui/button";
@@ -14,13 +15,14 @@ function App() {
   return (
     <>
       <Header />
-      <div className="w-full h-[90vh] flex justify-center items-center gap-4 flex-col">
+      <div className="w-full flex h-[84vh] overflow-y-scroll justify-center items-center gap-4 flex-col">
         {/* <div>
           <h3>{"Global Data: " + globalData.test}</h3>
           <Button onClick={changeTest}>Click me</Button>
         </div>
         <CountComponent /> */}
       </div>
+      <Footer />
     </>
   );
 }
