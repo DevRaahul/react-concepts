@@ -2,10 +2,12 @@ import "./App.css";
 import Footer from "./components/Footer";
 // import CountComponent from "./components/CountComponent";
 import Header from "./components/Header";
+import useFetch from "./Hooks/useFetch";
 // import { Button } from "./components/ui/button";
 // import { useGlobalContext } from "./context/GlobalContext";
 
 function App() {
+  const { data } = useFetch("https://fakestoreapi.com/products");
   // const { globalData, updateGlobalContext } = useGlobalContext();
 
   // const changeTest = () => {
